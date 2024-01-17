@@ -5,16 +5,10 @@ metadata:
 
 spec:
   rules:
-    - http:
+    - host: whoami.${DOMAIN}
+      http:
         paths:
-          - path: /bar
-            pathType: Prefix
-            backend:
-              service:
-                name: whoami
-                port:
-                  number: 5678
-          - path: /foo
+          - path: /
             pathType: Prefix
             backend:
               service:
